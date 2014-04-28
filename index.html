@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="@felegy livewire.hu" />
+
+    <title>Adóbevallás Online [adobevallasonline.hu]</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom Google Web Font -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.2/css/jasny-bootstrap.css.map" rel="stylesheet" type="text/css" />
+    <!-- Add custom CSS here -->
+    <link href="css/landing-page.css" rel="stylesheet" />
+
+    <meta property="og:site_name" content="Adóbevallás Online" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://adobevallasonline.hu" />
+    <meta property="og:title" content="Kávé-süti-adóbevallás" />
+    <meta property="og:image" content="//" />
+    
+
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">AdóbevallásOnline.hu</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#szolgaltats">Szolgáltatás</a>
+                    </li>
+                    <li>
+                        <a href="#kapcsolat">Kapcsolat</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="intro-header">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <img class="img-rounded" alt="Tranzit Art Cafe logo" src="/img/tranzit-logo.png" />
+                        <a name="regisztracio"></a>
+                        <h1>Kávé-süti-adóbevallás</h1>
+                        <h3>a Tranzit Art Cafe-ban</h3>
+                        <p>Regisztráljon a szolgáltatásra:</p>
+                        <hr class="intro-divider">
+                        <div id="alert" class="alert alert-success fade in" style="display: none">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <strong>Gratulálunk!</strong> Sikeresen regisztrált szolgáltatásunkra, email-ben értesítjük a részletekről.
+                        </div>
+                        <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <button id="login_facebook" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></button>
+                            </li>
+                            <li>
+                                <button id="login_google" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google</span></button>
+                            </li>
+                            <li>
+                                <button class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal"><i class="fa fa-envelope fa-fw"></i> <span class="network-name">Email</span></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form data-toggle="validator" role="form"> 
+                <!--<form data-toggle="validator" role="form" method="post" action="http://localhost:1100/api/registration">-->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Regisztráció adóbevallás kitöltéséhez</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="FamilyName">Vezeték név</label>
+                            <input name="familyname" type="text" required="" class="form-control" id="FamilyName" placeholder="Minta" data-error="Kötelező megadni">
+                            <span class="help-block with-errors"><ul class="list-unstyled"><li>Kötelező megadni</li></ul></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="GivenName">Kereszt név</label>
+                            <input name="givenname" type="text" required="" class="form-control" id="GivenName" placeholder="Miklós" data-error="Kötelező megadni">
+                            <span class="help-block with-errors"><ul class="list-unstyled"><li>Kötelező megadni</li></ul></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="Email">Email cím</label>
+                            <input name="email" type="email" required="" class="form-control" id="Email" placeholder="valaki@valahol.hu" data-error="Hibás email cím">
+                            <span class="help-block with-errors"><ul class="list-unstyled"><li>Hibás email cím</li></ul></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="Phone">Telefonszám</label>
+                            <input name="phone" type="text" class="form-control" id="Phone" placeholder="+36 30 555 1234" data-mask="+36-99-999-9999">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="mailto://info@adobevallasonline.hu" class="btn btn-default">Elakadt?</a>
+                        <button type="submit" id="btn-submit" class="btn btn-primary">Regisztrálok</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <a name="szolgaltats"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">
+                        Hogy működik:
+                    </h2>
+                    <p class="lead"></p>
+                    <ol class="lead">
+                        <li>Regisztráljon a szolgáltatásra <a href="#regisztracio">itt</a></li>
+                        <li>Ha szeretné felgyorsítani az ügyintézést töltse fel az adóbevalláshoz szükséges iratait és mindenképpen adjon meg telefonszámot, hogy esetleges kérdéseinket feltehessük Önnek.</li>
+                        <li>Ha családi adókedvezményt vett igénybe 2013-ban ne felejtse el elküldeni  a gyermek vagy gyermekek adatait ( adóazonosító, név, születési hely és idő, édesanyja neve, lakcím ) sem !</li>
+                        <li>Regisztrációját emailben visszaigazoljuk és egyeztetünk Önnel időpontot.</li>
+                        <li>Az egyeztetett időpontban Ön eljön a Tranzit Art Cafe-ba , kényelembe helyezi magát egy vendégmarasztaló kanapén, majd a kávé és az ínycsiklandó süti elfogyasztása közben kézbekapja konyhakész adóbevallását, melyet már csak postáznia kell.</li>
+                        <li>Kifizeti a számlát. Kávé-süti-adóbevallás: 3.990 Ft.</li>
+                        <li>Az adóbevallás második példányát öt évig megőrizi.</li>
+                    </ol>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/ipad.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <a name="kapcsolat"></a>
+    <div class="content-section-b">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">
+                        Kapcsolat
+                        <br><small> helyszín, időpontok, elérhetőségek</small>
+                    </h2>
+                    <p class="lead">
+                        <strong>Helyszín :</strong>
+                        <br /><br />
+                        <a href="http://tranzitcafe.com/component/option,com_contact/Itemid,10/">Tranzit&#160;Art&#160;Café a kosztolányinál</a>
+                        <br /><br />
+                        <strong>Időpontok:</strong>
+                        <br /><br />
+                        2014. április 29. 9.00-23.00.<br />
+                        2014. május 6. 9.00-23.00.<br />
+                        2014. május 13. 9.00-23.00.<br />
+                        2014. május 20. 9.00-23.00.<br />
+                        <br /><br />
+                        <strong>Elérhetőség:</strong>
+                        <br /><br />
+                        FIX-KON-TAX  Bt.<br />
+                        +36-30-9541284<br />
+                        <a href="mailto://info@adobevallasonline.hu" target="_blank">info@adobevallasonline.hu</a></p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="img/tranzit.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Kövessen minket:</h2>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="banner-social-buttons list-inline">
+                        <li style="margin-top:10px">
+                            <a href="https://hu-hu.facebook.com/tranzitcafe" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">tranzitcafe</span></a>
+                        </li>
+                        <li style="margin-top:10px">
+                            <a href="http://4sq.com/dh0SNd" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-map-marker fa-fw"></i> <span class="network-name">tranzit-art-café</span></a>
+                        </li>
+                        <li style="margin-top:10px">
+                            <a href="https://www.facebook.com/AdobevallasOnline" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">AdobevallasOnline</span></a>
+                        </li>
+                        <li style="margin-top:10px">
+                            <a href="" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">AdobevallasOnline</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#"><i class="fa fa-home fa-fw"></i></a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#szolgaltats">Szolgáltatás</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#kapcsolat">Kapcsolat</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; adobevallasonline.hu 2014. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1-rc2/jquery.min.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.2/js/jasny-bootstrap.min.js" type="text/javascript"></script>
+    <script src="/js/validator.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        //Facebook INIT
+        window.fbAsyncInit = function () {
+            // init the FB JS SDK
+            FB.init({
+                appId: '1421292338132305', // App ID from the App Dashboard
+                status: true, // check the login status upon init?
+                cookie: true, // set sessions cookies to allow your server to access the session?
+                xfbml: true  // parse XFBML tags on this page?
+            });
+
+            console.log("Facebook Init");
+
+        };
+
+        //Google INIT
+        var googleAsyncInit = function () {
+            gapi.auth.init(function () {
+                console.log("Googel Init");
+            });
+        };
+
+        $(document).ready(function () {
+            ////////////////////////////////////////////////////////////////////////
+            // Google login
+            ////////////////////////////////////////////////////////////////////////
+            $('#login_google').attr("disabled", "disabled");
+            $.getScript("//apis.google.com/js/client.js?onload=googleAsyncInit&async=2", function success() {
+                $('#login_google').bind('click',
+                function () {
+                    var config = {
+                        'client_id': '96135195594-gtn220t9g9nsmtq5dq2hb92j674o9guk.apps.googleusercontent.com',
+                        'apiKey': 'AIzaSyC7Al4rUxJn7haOg3VM-4LF-wPS0GtieXE',
+                        'scope': new Array('https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email')
+                    };
+                    gapi.auth.authorize(config, function () {
+                        console.log('login complete');
+                        console.log(gapi.auth.getToken());
+                        gapi.client.setApiKey(config.apiKey);
+                        gapi.client.load('oauth2', 'v1', function () {
+                            var request = gapi.client.oauth2.userinfo.get();
+                            request.execute(function (resp) {
+                                $('#familyname').val(resp.family_name);
+                                $('#givenname').val(resp.given_name);
+                                $('#email').val(resp.email);
+                                $('#myModal').modal('show');
+                            });
+                        });
+
+                    });
+                    return false;
+                }
+            );
+                $('#login_google').removeAttr("disabled");
+            });
+            ////////////////////////////////////////////////////////////////////////
+
+            ////////////////////////////////////////////////////////////////////////
+            // FaceBook login
+            ////////////////////////////////////////////////////////////////////////
+            $('#login_facebook').attr("disabled", "disabled");
+            $.getScript("//connect.facebook.net/en_US/all.js", function success() {
+                $('#login_facebook').bind('click',
+	  			function () {
+	  			    FB.login(function (resp) {
+	  			        if (resp) {
+	  			            FB.api('/me', function (resp) {
+	  			                $('#familyname').val(resp.last_name);
+	  			                $('#givenname').val(resp.first_name);
+	  			                $('#email').val(resp.email);
+	  			                $('#myModal').modal('show');
+	  			            });
+	  			        } else {
+	  			            console.log('User cancelled login or did not fully authorize.');
+	  			        }
+	  			    }, { scope: 'email' });
+	  			    return false;
+	  			}
+	  			);
+                $('#login_facebook').removeAttr("disabled");
+            });
+            ////////////////////////////////////////////////////////////////////////
+
+            $('#btn-submit').bind('click',
+               function () {
+                   $.post("https://abo.apphb.com/api/Registrations/Create",
+                        $("form").serialize(),
+                         function (res) {
+                             $('#myModal').modal('hide');
+                             $("#alert").show();
+                         });
+                   return false;
+               });
+        });
+    </script>
+</body>
+
+</html>
